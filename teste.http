@@ -1,0 +1,36 @@
+# @host = locahost:9090/api/v1
+
+### Todos os Alunos
+
+GET http://localhost:9090/api/v1/alunos
+
+### Aluno existente 1
+
+GET http://localhost:9090/api/v1/alunos/2
+
+### Aluno inexistente 123456 => 204 NO CONTENT
+
+GET http://localhost:9090/api/v1/alunos/123456
+
+### Novo Aluno válido
+
+POST http://localhost:9090/api/v1/alunos
+Content-Type: application/json
+
+{
+  "nomeCompleto": "Teste Novo Aluno",
+  "email": "um@email.com"
+}
+
+### Deletar aluno #2
+
+DELETE http://localhost:9090/api/v1/alunos/2
+
+### Novo Aluno não-válido
+
+POST http://localhost:9090/api/v1/alunos
+Content-Type: application/json
+
+{
+  "email": "um@email.com"
+}
